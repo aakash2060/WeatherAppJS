@@ -160,11 +160,11 @@ footer {
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 40px;
+        font-size: 30px;
     }
 
     .card {
-        width: 100%;
+        width: 70%;
         margin: 50px auto;
         padding: 20px 15px;
     }
@@ -194,10 +194,12 @@ footer {
     .search input {
         font-size: 16px;
         padding: 0.8em;
+        width: 50%;
     }
 
     .search button {
-        width: 50px;
-        height: 50px;
+        width: 25%;
+        height: 24%;
+        color: red;
     }
 }
