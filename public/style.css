@@ -98,7 +98,7 @@ h1{
     margin-top: -6px;
 }
 .weather{
-    display:none;
+    /* display:none; */
 }
 
 .error{
