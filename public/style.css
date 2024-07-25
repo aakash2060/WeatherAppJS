@@ -18,14 +18,14 @@ h1{
     width: auto;
     text-align: center;
     padding: 0px;
-    margin: 0.2em 0 0  0em;
+    margin: 1em 0em 1em  0em;
     color: #002244;
-    font-size: 80px;
+    font-size: 1.5em;
 }
 
 .card{
     width: 70%;
-    margin: 30px auto;
+    margin: 0px auto;
     max-width: 470px;
     padding: 40px 35px;
     text-align: center;
@@ -71,7 +71,6 @@ h1{
 .weather h2{
     font-size: 45px;
     font-weight: 300;
-    margin-top: 1px;
 }
 
 .details{
@@ -113,7 +112,7 @@ h1{
 footer {
     text-align: center;
     padding: 10px;
-    background: none; /* Or any other color to match your design */
+    background: no-repeat; /* Or any other color to match your design */
     color: #fff;
     position: fixed;
     bottom: 0;
