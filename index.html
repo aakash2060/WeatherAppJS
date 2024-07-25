@@ -20,13 +20,15 @@
       <div class="details">
         <div class="col">
           <img src="./assets/humidity.png" />
-          <div class="humidity">
+          <div>
+            <p class="humidity">50%</p>
             <p>Humidity</p>
           </div>
         </div>
         <div class="col">
           <img src="./assets/wind.png" />
-          <div class="wind">
+          <div>
+            <p class="wind">15 m/s</p>
             <p>Wind Speed</p>
           </div>
         </div>
@@ -35,17 +37,29 @@
     <script>
       const apiKey = "b5b6f422574eca38295f0be3b15958bd";
       const apiUrl =
-        "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=kathmandu";
+        "https://api.openweathermap.org/data/2.5/weather?units=imperials&q=";
 
-      async function checkWeather() {
-        const response = await fetch(apiUrl + `&appid=${apiKey}`);
+      const searchBox = document.querySelector(".search input");
+      const searchButton = document.querySelector(".search button");
+
+      async function checkWeather(city) {
+        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
         let data = await response.json();
         console.log(data);
-        document.querySelector("city").innerHTML = data.name;
-        doucument.querySelector("temp").innerHTML = data.main.temp;
-        doucument.querySelector("humidity").innerHTML = data.main.humidity;
-        doucument.querySelector("wind").innerHTML = data.wind.speed;
+        document.querySelector(".city").innerHTML = `${data.name}`;
+        document.querySelector(".temp").innerHTML = `${Math.round(
+          ((data.main.temp - 273.15) * 9) / 5 + 32
+        )}°F`;
+        document.querySelector(
+          ".humidity"
+        ).innerHTML = `${data.main.humidity}%`;
+        document.querySelector(".wind").innerHTML = `${Math.round(
+          data.wind.speed * 2.237
+        )} mph`;
       }
+      searchButton.addEventListener("click", () => {
+        checkWeather(searchBox.value);
+      });
     </script>
   </body>
 </html>
